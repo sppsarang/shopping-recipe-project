@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-xl navbar-light bg-light mr-auto">
+    <div class="container-fluid">
+        
+        <a style="cursor: pointer;"  class="navbar-brand">Recipe Book</a>
+        
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="nav-item" routerLinkActive="active">
+                    <!--<a class="nav-link" (click)="recipeSelected()" [routerLink]="recipe">Recipes</a> -->
+                    <a class="nav-link" routerLink="recipes">Recipes</a>
+                </li>
+                <li class="nav-item" routerLinkActive="active">
+                    <!--<a class="nav-link" (click)="shoppingSelected()" [routerLink]="shoppinglist">Shopping List</a> -->
+                    <a class="nav-link" routerLink="shopping-list">Shopping List</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav right">
+                <li class="dropdown">
+                    <a style="cursor: pointer;" class="dropdown-toggle" (click)="openDropDown()" role="button">Manage</a>
+                    <ul class="dropdown-menu" [class.show]="openDropDownFlag">
+                        <li><a style="cursor: pointer;">Save Data</a></li>
+                        <li><a style="cursor: pointer;">Fetch Data</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>    
+</nav>

@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-xs-12">
+        <img src="{{item.imagePath}}" alt="{{item.imagePath}}" height="300" width="450">
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12" *ngIf="item != null">
+        <h1>{{item.name}}</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" (click)="openDropDown()">
+                Manage Recipe <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" [class.show]="openDropDownFlag">
+                <li><a href="#" (click)="addToShoppingList()">To Shopping List</a></li>
+                <li><a [routerLink]='["edit"]'>Edit Recipe</a></li>
+                <li><a href="#">Delete Recipe</a></li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12" *ngIf="item != null">
+        {{item.description}}
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let ingrd of item.ingredients">
+                {{ingrd.name}} ({{ingrd.amount}})
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<hr>
+<div class="row">
+    <div class="col-xl-12 align-self-lg-center">
+        <button routerLink="/recipes/new" class="btn btn-success">Add Recipe</button>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <app-recipe-item *ngFor = 'let recipe of recipeList' 
+        [item]="recipe" ></app-recipe-item>
+</div>
